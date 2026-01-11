@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control - AI Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <!-- <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                    <path d="M60 20 L60 100 M20 60 L100 60" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="60" cy="60" r="8" fill="currentColor"/>
+                </svg> -->
+                <img src="screenshots/icon-removebg-preview.png" alt="logo" class="logo">
+                <span>Control</span>
+            </div>
+            <div class="navbar-menu" id="navbarMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="navbar-toggle" id="navbarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive AI solutions designed for your success</p>
+    </section>
+
+   
+    <section class="services-section">
+        <div class="services-grid">
+           
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="screenshots/premium_vector-1725372199769-450627997086.avif" alt="Custom AI Development">
+                </div>
+                <div class="service-content">
+                    <h3>Custom AI Development</h3>
+                    <p>Build tailored AI solutions that perfectly align with your business objectives and operational needs.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Custom Models</span>
+                        <span><i class="fas fa-check"></i> Full Integration</span>
+                        <span><i class="fas fa-check"></i> Continuous Support</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('modal-1')">Learn More</button>
+                </div>
+            </div>
+
+           
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="screenshots/premium_photo-1678453146861-d0614ff93be4.avif">
+                </div>
+                <div class="service-content">
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Expert guidance to develop comprehensive AI strategies that maximize ROI and competitive advantage.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Strategy Planning</span>
+                        <span><i class="fas fa-check"></i> Market Analysis</span>
+                        <span><i class="fas fa-check"></i> Implementation Roadmap</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('modal-2')">Learn More</button>
+                </div>
+            </div>
+
+          
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="screenshots/istockphoto-1828639337-612x612.webp" alt="Agentic AI Systems">
+                </div>
+                <div class="service-content">
+                    <h3>Agentic AI Systems</h3>
+                    <p>Deploy autonomous AI agents that handle complex tasks with minimal human intervention.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Autonomous Agents</span>
+                        <span><i class="fas fa-check"></i> Task Automation</span>
+                        <span><i class="fas fa-check"></i> Performance Optimization</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('modal-3')">Learn More</button>
+                </div>
+            </div>
+
+           
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="screenshots/photo-1552664730-d307ca884978.jpeg" alt="AI Training">
+                </div>
+                <div class="service-content">
+                    <h3>Team AI Training</h3>
+                    <p>Upskill your team with comprehensive training on AI tools, methodologies, and best practices.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Hands-on Workshops</span>
+                        <span><i class="fas fa-check"></i> Certification Programs</span>
+                        <span><i class="fas fa-check"></i> Ongoing Support</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('modal-4')">Learn More</button>
+                </div>
+            </div>
+
+           
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="screenshots/solen-feyissa-hWSNT_Pp4x4-unsplash.jpg" alt="AI Integration">
+                </div>
+                <div class="service-content">
+                    <h3>Integration & Migration</h3>
+                    <p>Seamlessly integrate AI solutions into existing systems with zero downtime and minimal disruption.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Legacy Integration</span>
+                        <span><i class="fas fa-check"></i> Data Migration</span>
+                        <span><i class="fas fa-check"></i> Quality Assurance</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('modal-5')">Learn More</button>
+                </div>
+            </div>
+
+        
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="screenshots/premium_vector-1749562552763-dd73f9531156.avif" alt="Maintenance & Support">
+                </div>
+                <div class="service-content">
+                    <h3>Maintenance & Support</h3>
+                    <p>24/7 monitoring and support to ensure your AI systems perform optimally at all times.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> 24/7 Monitoring</span>
+                        <span><i class="fas fa-check"></i> Performance Tuning</span>
+                        <span><i class="fas fa-check"></i> Regular Updates</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('modal-6')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-1')">&times;</span>
+            <h2>Custom AI Development</h2>
+            <p>Develop bespoke AI solutions tailored to your unique business requirements.</p>
+            <h4>What's Included:</h4>
+            <ul>
+                <li>In-depth requirement analysis and planning</li>
+                <li>Custom model training and development</li>
+                <li>Integration with existing systems</li>
+                <li>Testing, validation, and deployment</li>
+                <li>Comprehensive documentation</li>
+                <li>Post-launch support and optimization</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeModal('modal-1'); window.location.href='contact.html';">Book a Consultation</button>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-2')">&times;</span>
+            <h2>AI Strategy & Consulting</h2>
+            <p>Strategic guidance to leverage AI for competitive advantage.</p>
+            <h4>What's Included:</h4>
+            <ul>
+                <li>Business impact assessment</li>
+                <li>Market and competitive analysis</li>
+                <li>AI readiness evaluation</li>
+                <li>Custom roadmap development</li>
+                <li>Implementation strategy</li>
+                <li>Executive training and change management</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeModal('modal-2'); window.location.href='contact.html';">Get Started</button>
+        </div>
+    </div>
+
+    <div id="modal-3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-3')">&times;</span>
+            <h2>Agentic AI Systems</h2>
+            <p>Deploy intelligent autonomous agents to handle complex business processes.</p>
+            <h4>What's Included:</h4>
+            <ul>
+                <li>Agent architecture design</li>
+                <li>Autonomous task execution</li>
+                <li>Decision-making algorithms</li>
+                <li>Real-time monitoring and control</li>
+                <li>Scalability and performance optimization</li>
+                <li>Continuous improvement mechanisms</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeModal('modal-3'); window.location.href='contact.html';">Request Demo</button>
+        </div>
+    </div>
+
+    <div id="modal-4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-4')">&times;</span>
+            <h2>Team AI Training</h2>
+            <p>Comprehensive training programs to upskill your team on AI technologies.</p>
+            <h4>What's Included:</h4>
+            <ul>
+                <li>Customized curriculum development</li>
+                <li>Hands-on practical workshops</li>
+                <li>Industry best practices training</li>
+                <li>Certification programs</li>
+                <li>Mentorship and ongoing support</li>
+                <li>Quarterly refresher sessions</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeModal('modal-4'); window.location.href='contact.html';">Enroll Now</button>
+        </div>
+    </div>
+
+    <div id="modal-5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-5')">&times;</span>
+            <h2>Integration & Migration</h2>
+            <p>Seamless integration of AI solutions into your existing infrastructure.</p>
+            <h4>What's Included:</h4>
+            <ul>
+                <li>Legacy system assessment</li>
+                <li>Custom integration architecture</li>
+                <li>Data migration and transformation</li>
+                <li>API development and documentation</li>
+                <li>Testing and validation</li>
+                <li>Zero-downtime deployment</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeModal('modal-5'); window.location.href='contact.html';">Start Integration</button>
+        </div>
+    </div>
+
+    <div id="modal-6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-6')">&times;</span>
+            <h2>Maintenance & Support</h2>
+            <p>Continuous support and optimization for peak AI system performance.</p>
+            <h4>What's Included:</h4>
+            <ul>
+                <li>24/7 system monitoring</li>
+                <li>Proactive issue detection</li>
+                <li>Performance optimization</li>
+                <li>Security updates and patching</li>
+                <li>Model retraining and updates</li>
+                <li>Dedicated support team access</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeModal('modal-6'); window.location.href='contact.html';">Subscribe Now</button>
+        </div>
+    </div>
+
+  
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Control</h4>
+                <p>AI Development Studio for the next evolution of agentic AI.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/greatness-okorie-ab508a263" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="http://t.me/Gruco01" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://github.com/Greatness0123" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a><br>
+                <a href="services.html">Services</a><br>
+                <a href="about.html">About</a><br>
+                <a href="profile.html">Profile</a><br>
+                <a href="contact.html">Contact</a><br>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:grucookorie@gmail.com">contact@controlai.com</a></p>
+                <p>Phone: <a href="tel:+2349165211677">+234 (0) 91 6521 1677</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Control AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
