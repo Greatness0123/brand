@@ -111,7 +111,6 @@ a:hover {
 .navbar-logo {
   display: flex;
   align-items: center;
-  /* gap: 0.75rem; */
   gap: 0;
   font-size: 1.5rem;
   font-weight: 700;
@@ -123,7 +122,6 @@ a:hover {
   width: 40px;
   height: 40px;
   color: var(--primary-color);
-  /* animation: rotate 20s linear infinite; */
 }
 
 @keyframes rotate {
@@ -971,15 +969,99 @@ a:hover {
   color: #d32f2f;
 }
 
+/* Map Section - Improved Responsiveness */
 .map-section {
   margin-top: 4rem;
   padding-top: 4rem;
   border-top: 1px solid var(--border-color);
+  width: 100%;
 }
 
 .map-section h2 {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 45%; /* Aspect ratio for the map */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(245, 245, 245, 0.5) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.map-wrapper:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.map-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.map-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.map-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.map-button.secondary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.map-button.secondary:hover {
+  background-color: var(--light-gray);
+}
+
+.map-instructions {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .footer {
@@ -1052,6 +1134,25 @@ a:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero {
+    padding: 5rem 2rem;
+    gap: 3rem;
+  }
+
+  .map-wrapper {
+    padding-bottom: 50%; /* Slightly taller aspect ratio for tablets */
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -1074,7 +1175,7 @@ a:hover {
     flex-direction: column;
     background: rgba(255, 255, 255, 0.95);
     padding: 1rem;
-    gap: 5;
+    gap: 5px;
     border-bottom: 1px solid var(--border-color);
   }
 
@@ -1089,6 +1190,7 @@ a:hover {
   .hero {
     grid-template-columns: 1fr;
     padding: 3rem 1.5rem;
+    gap: 2rem;
   }
 
   .hero-image {
@@ -1131,8 +1233,80 @@ a:hover {
   .contact-form-container {
     padding: 2rem 1.5rem;
   }
+
+  /* Map Section - Mobile Responsiveness */
+  .map-container {
+    padding: 0 1.5rem;
+  }
+
+  .map-wrapper {
+    padding-bottom: 70%; /* Taller aspect ratio for mobile */
+    border-radius: 8px;
+  }
+
+  .map-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .map-instructions {
+    padding: 0 1rem;
+    font-size: 0.85rem;
+  }
 }
-   .map-section{
-     width:100%;
-     
-   }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .map-wrapper {
+    padding-bottom: 80%; /* Even taller for very small screens */
+  }
+
+  .map-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .map-actions {
+    gap: 0.75rem;
+  }
+
+  .map-button {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .map-wrapper {
+    padding-bottom: 90%; /* Tall aspect ratio for smallest screens */
+  }
+
+  .map-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .map-wrapper:hover {
+    transform: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .map-button:active {
+    transform: scale(0.98);
+  }
+}
