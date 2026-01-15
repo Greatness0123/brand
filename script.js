@@ -108,16 +108,49 @@ if (contactForm) {
 
     if (isValid) {
       const formMessage = document.getElementById("formMessage")
-      formMessage.textContent = "Message sent successfully! We will get back to you soon."
-      formMessage.classList.add("success")
-      formMessage.classList.remove("error")
+      const submitButton = contactForm.querySelector('button[type="submit"]')
+      const originalButtonText = submitButton.textContent
 
-      contactForm.reset()
+      // Show loading state
+      submitButton.textContent = "Sending..."
+      submitButton.disabled = true
 
-      setTimeout(() => {
-        formMessage.textContent = ""
-        formMessage.classList.remove("success", "error")
-      }, 5000)
+      const formData = new FormData(contactForm)
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+        .then(async (response) => {
+          const json = await response.json()
+          if (response.status == 200) {
+            formMessage.textContent = "Message sent successfully! We will get back to you soon."
+            formMessage.classList.add("success")
+            formMessage.classList.remove("error")
+            contactForm.reset()
+          } else {
+            console.log(response)
+            formMessage.textContent = json.message || "Something went wrong. Please try again."
+            formMessage.classList.add("error")
+            formMessage.classList.remove("success")
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          formMessage.textContent = "Something went wrong. Please check your internet connection."
+          formMessage.classList.add("error")
+          formMessage.classList.remove("success")
+        })
+        .finally(() => {
+            // Reset button state
+            submitButton.textContent = originalButtonText
+            submitButton.disabled = false
+            
+            setTimeout(() => {
+                formMessage.textContent = ""
+                formMessage.classList.remove("success", "error")
+            }, 5000)
+        })
     }
   })
 }
